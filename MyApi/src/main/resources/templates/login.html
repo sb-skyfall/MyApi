@@ -1,0 +1,41 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="ISO-8859-1" />
+<title>Insert title here</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet"
+	href="/style1.css" />
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+<div id="loginDiv">
+<form id="loginEmp" method="post" action="/checkStatus">
+<div class="box">
+<h1>Dashboard</h1>
+
+<input type="text" name="empId" value="empId" minlength="7" maxlength="7"  id="empId" />
+ <br/> 
+<input type="password" name="pwd" value="password" minlength="7" maxlength="10"  id="pwd" />
+<div id="btn">  
+<input type="submit" value="Sign In">
+</div> <!-- End Btn -->
+
+<a href="/reg"><div id="btn2">Sign Up</div></a> <!-- End Btn2 -->
+  
+</div> <!-- End Box -->
+  
+</form>
+
+<p>Forgot your password? <u style="color:#f1c40f;">Click Here!</u></p>
+</div>
+
+ </body>
+ </html>

@@ -1,0 +1,107 @@
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1" />
+<title>Insert title here</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet"
+	href="/style.css" />
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+<script src="/postrequest.js"></script>
+</head>
+<body>
+<div id="postResultDiv" align="center"></div>
+<h3>EMPLOYEE REGISTRATION FORM</h3>
+
+ <form id="saveEmp" action="saveEmployee" method="POST">
+<table align="center" cellpadding = "10">
+ 
+<!----- First Name ---------------------------------------------------------->
+<tr>
+<td>FIRST NAME</td>
+<td><input type="text" id="First_Name" maxlength="30"/>
+(max 30 characters a-z and A-Z)
+</td>
+</tr>
+ 
+<!----- Last Name ---------------------------------------------------------->
+<tr>
+<td>LAST NAME</td>
+<td><input type="text" id="Last_Name" maxlength="30"/>
+(max 30 characters a-z and A-Z)
+</td>
+</tr>
+
+<tr>
+<td>Emp Id:</td>
+<td><input type="text" id="emp_id" minlength="7" maxlength="7"/>
+(max 30 characters a-z and A-Z)
+</td>
+</tr>
+ 
+
+<!----- Email Id ---------------------------------------------------------->
+<tr>
+<td>EMAIL ID</td>
+<td><input type="text" id="Email_Id" maxlength="100" /></td>
+</tr>
+ 
+<!----- Mobile Number ---------------------------------------------------------->
+<tr>
+<td>MOBILE NUMBER</td>
+<td>
+<input type="text" id="Mobile_Number" maxlength="10" />
+(10 digit number)
+</td>
+</tr>
+<tr>
+<td>Designation:</td>
+<td>
+<input type="text" id="Designation" maxlength="10" />
+
+</td>
+</tr>
+  
+<tr>
+<td>Password:</td>
+<td>
+<input type="password" id="password" minlength="7" maxlength="10" />
+
+</td>
+</tr>
+<tr>
+<td>Security Question</td>
+<td>
+<input type="text" id="security_Question" maxlength="50" />
+
+</td>
+</tr>
+<tr>
+<td>Answer</td>
+<td>
+<input type="text" id="security_Answer" maxlength="10" />
+
+</td>
+</tr>
+<!----- Submit and Reset ------------------------------------------------->
+<tr>
+<td colspan="2" align="center">
+<input type="submit" value="Submit">
+<input type="reset" value="Reset">
+</td>
+</tr>
+</table><center>
+<div id="backLogin">
+<a href="/login">Back to Login</a>
+</center>
+</form>
+
+</div>
+</body>
+</html>
