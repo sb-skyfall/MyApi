@@ -1,5 +1,6 @@
 package com.shubham.demo.controller;
 
+import java.util.ArrayList;
 import java.util.TreeMap;
 
 import javax.servlet.http.HttpServletRequest;
@@ -14,10 +15,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.shubham.demo.dao.CredentialDao;
 import com.shubham.demo.dao.EmployeeDao;
 import com.shubham.demo.model.Credential;
+import com.shubham.demo.model.Designation;
 import com.shubham.demo.model.Email;
 import com.shubham.demo.model.EmpData;
 import com.shubham.demo.model.Employee;
@@ -113,4 +116,24 @@ public class RController {
 		sess.clear();
 		return "login.html";
 	}
+	@PostMapping("/searchDesignation")
+	public ResponseEntity<Object> searchViaDesignation(@RequestBody Designation designation) 
+	{
+		System.out.println(designation.getDesignation());
+		
+		ArrayList<Employee> e=ed.findByDesignation(designation.getDesignation());
+		String st="failure";
+		System.out.println(e);
+		if(!e.isEmpty())
+		{
+			ServiceResponse<ArrayList<Employee>> res=new ServiceResponse<>("success",e);
+			System.out.println("Entered");
+			return new ResponseEntity<Object>(res,HttpStatus.OK);
+			
+		}
+		ServiceResponse<ArrayList<Employee>> res=new ServiceResponse<>(st,e);
+		return new ResponseEntity<Object>(res,HttpStatus.OK);
+		
+	}
+	
 }

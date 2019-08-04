@@ -94,11 +94,19 @@ h1{
 #btn2:hover{ 
 background:#3594D2; 
 }
-#searchByDesignation,#sDesignation
+#Res1,#Res2
 {
-	display:none;
+	border-radius: 15px;
+	background:white;
+	width:50%;
 }
-#searchByEmail,#sEmail
+#sidePanel
 {
+	left:0;
+	float:left;
+}
+#leftPanel
+{
+	float:left;
 	display:none;
 }
